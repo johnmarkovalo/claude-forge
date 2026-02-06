@@ -1,0 +1,29 @@
+{
+  "pipelines": {
+    "build-feature": {
+      "file": "build-feature.md",
+      "phases": ["analyze", "plan", "execute", "verify", "review", "document"],
+      "description": "Full feature build with analysis, planning, execution, and verification"
+    },
+    "fix-bug": {
+      "file": "fix-bug.md",
+      "phases": ["analyze", "plan", "execute", "verify"],
+      "description": "Bug diagnosis and targeted fix with verification"
+    },
+    "refactor": {
+      "file": "refactor.md",
+      "phases": ["analyze", "plan", "execute", "verify", "review"],
+      "description": "Code restructuring without behavior changes"
+    },
+    "review": {
+      "file": "review.md",
+      "phases": ["review"],
+      "description": "Standalone code review"
+    },
+    "spike": {
+      "file": "spike.md",
+      "phases": ["analyze"],
+      "description": "Research and exploration only"
+    }
+  }
+}

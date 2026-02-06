@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "name": "claude-forge",
+  "forge_home": "~/.claude-forge",
+  "defaults": {
+    "pipeline": "build-feature",
+    "model_tier": "standard",
+    "auto_verify": true,
+    "auto_memory": true,
+    "auto_evolve_propose": true,
+    "auto_evolve_promote": false,
+    "checkpoint_on_phase": true
+  },
+  "display": {
+    "show_cost_after_task": true,
+    "show_memory_matches": true,
+    "show_phase_transitions": true,
+    "verbose_events": false
+  }
+}

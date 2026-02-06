@@ -1,0 +1,160 @@
+{
+  "routes": [
+    {
+      "id": "fix-any",
+      "match": { "action": "fix" },
+      "pipeline": "fix-bug",
+      "agents": {
+        "analyze": "debugger",
+        "plan": "architect",
+        "execute": "implementer",
+        "verify": "tester"
+      }
+    },
+    {
+      "id": "create-complex",
+      "match": { "action": "create", "complexity": ["complex", "architectural"] },
+      "pipeline": "build-feature",
+      "agents": {
+        "analyze": "analyst",
+        "plan": "architect",
+        "execute": "implementer",
+        "review": "reviewer",
+        "verify": "tester",
+        "document": "documenter"
+      }
+    },
+    {
+      "id": "create-moderate",
+      "match": { "action": "create", "complexity": ["moderate"] },
+      "pipeline": "build-feature",
+      "skip_phases": ["document"],
+      "agents": {
+        "analyze": "analyst",
+        "plan": "architect",
+        "execute": "implementer",
+        "verify": "tester"
+      }
+    },
+    {
+      "id": "create-simple",
+      "match": { "action": "create", "complexity": ["trivial", "simple"] },
+      "pipeline": "build-feature",
+      "skip_phases": ["analyze", "review", "document"],
+      "agents": {
+        "plan": "architect",
+        "execute": "implementer",
+        "verify": "tester"
+      }
+    },
+    {
+      "id": "modify-any",
+      "match": { "action": "modify" },
+      "pipeline": "build-feature",
+      "skip_phases": ["document"],
+      "agents": {
+        "analyze": "analyst",
+        "plan": "architect",
+        "execute": "implementer",
+        "verify": "tester"
+      }
+    },
+    {
+      "id": "review-any",
+      "match": { "action": "review" },
+      "pipeline": "review",
+      "agents": {
+        "review": "reviewer"
+      }
+    },
+    {
+      "id": "optimize-database",
+      "match": { "action": "optimize", "domain": "database" },
+      "pipeline": "refactor",
+      "agents": {
+        "analyze": "analyst",
+        "plan": "architect",
+        "execute": "implementer",
+        "verify": "tester"
+      },
+      "prefer_evolved": ["db-optimizer"]
+    },
+    {
+      "id": "optimize-any",
+      "match": { "action": "optimize" },
+      "pipeline": "refactor",
+      "agents": {
+        "analyze": "analyst",
+        "plan": "architect",
+        "execute": "implementer",
+        "verify": "tester"
+      }
+    },
+    {
+      "id": "refactor-any",
+      "match": { "action": ["refactor", "modify"], "domain": "refactor" },
+      "pipeline": "refactor",
+      "agents": {
+        "analyze": "analyst",
+        "plan": "architect",
+        "execute": "implementer",
+        "review": "reviewer",
+        "verify": "tester"
+      }
+    },
+    {
+      "id": "analyze-debug",
+      "match": { "action": "analyze", "domain": "debug" },
+      "pipeline": "fix-bug",
+      "agents": {
+        "analyze": "debugger",
+        "plan": "architect"
+      }
+    },
+    {
+      "id": "analyze-any",
+      "match": { "action": "analyze" },
+      "pipeline": "spike",
+      "agents": {
+        "analyze": "analyst"
+      }
+    },
+    {
+      "id": "migrate-any",
+      "match": { "action": "migrate" },
+      "pipeline": "build-feature",
+      "agents": {
+        "analyze": "analyst",
+        "plan": "architect",
+        "execute": "implementer",
+        "review": "reviewer",
+        "verify": "tester",
+        "document": "documenter"
+      }
+    },
+    {
+      "id": "docs-any",
+      "match": { "domain": "docs" },
+      "pipeline": "build-feature",
+      "skip_phases": ["analyze", "review", "verify"],
+      "agents": {
+        "plan": "architect",
+        "execute": "documenter"
+      }
+    }
+  ],
+  "fallback": {
+    "pipeline": "build-feature",
+    "agents": {
+      "analyze": "analyst",
+      "plan": "architect",
+      "execute": "implementer",
+      "verify": "tester"
+    }
+  },
+  "routing_rules": {
+    "match_priority": "first_match",
+    "check_staging_agents": true,
+    "staging_mode": "shadow"
+  }
+}

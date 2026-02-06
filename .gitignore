@@ -1,0 +1,22 @@
+# Runtime data (personal to each user)
+memory/lessons/
+memory/patterns/
+memory/decisions/
+memory/context/
+memory/index.json
+memory/.archived/
+checkpoints/active/
+checkpoints/completed/
+logs/events.jsonl
+logs/evolution.jsonl
+
+# Staging/retired agents (personal evolution)
+agents/staging/
+agents/retired/
+
+# Custom pipelines (optional — include if team shares)
+# pipelines/custom/
+
+# OS
+.DS_Store
+Thumbs.db

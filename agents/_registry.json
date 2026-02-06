@@ -1,0 +1,91 @@
+{
+  "agents": {
+    "analyst": {
+      "file": "stable/analyst.md",
+      "status": "stable",
+      "tier": "heavy",
+      "model": "opus",
+      "capabilities": ["requirement-extraction", "risk-assessment", "codebase-analysis", "dependency-mapping"],
+      "avg_tokens": 2500,
+      "invocations": 0,
+      "success_rate": null,
+      "last_used": null
+    },
+    "architect": {
+      "file": "stable/architect.md",
+      "status": "stable",
+      "tier": "heavy",
+      "model": "opus",
+      "capabilities": ["system-design", "api-design", "schema-design", "trade-off-analysis", "planning"],
+      "avg_tokens": 3000,
+      "invocations": 0,
+      "success_rate": null,
+      "last_used": null
+    },
+    "implementer": {
+      "file": "stable/implementer.md",
+      "status": "stable",
+      "tier": "standard",
+      "model": "sonnet",
+      "capabilities": ["code-generation", "refactoring", "integration", "file-creation", "file-modification"],
+      "avg_tokens": 4000,
+      "invocations": 0,
+      "success_rate": null,
+      "last_used": null
+    },
+    "reviewer": {
+      "file": "stable/reviewer.md",
+      "status": "stable",
+      "tier": "heavy",
+      "model": "opus",
+      "capabilities": ["code-review", "security-audit", "performance-review", "architecture-review"],
+      "avg_tokens": 2000,
+      "invocations": 0,
+      "success_rate": null,
+      "last_used": null
+    },
+    "tester": {
+      "file": "stable/tester.md",
+      "status": "stable",
+      "tier": "standard",
+      "model": "sonnet",
+      "capabilities": ["test-generation", "test-execution", "edge-case-analysis", "verification"],
+      "avg_tokens": 2500,
+      "invocations": 0,
+      "success_rate": null,
+      "last_used": null
+    },
+    "debugger": {
+      "file": "stable/debugger.md",
+      "status": "stable",
+      "tier": "heavy",
+      "model": "opus",
+      "capabilities": ["debugging", "stack-trace-analysis", "reproduction", "root-cause-analysis"],
+      "avg_tokens": 2000,
+      "invocations": 0,
+      "success_rate": null,
+      "last_used": null
+    },
+    "documenter": {
+      "file": "stable/documenter.md",
+      "status": "stable",
+      "tier": "light",
+      "model": "haiku",
+      "capabilities": ["documentation", "readme", "api-docs", "inline-comments", "changelogs"],
+      "avg_tokens": 1500,
+      "invocations": 0,
+      "success_rate": null,
+      "last_used": null
+    }
+  },
+  "tier_models": {
+    "heavy": "opus",
+    "standard": "sonnet",
+    "light": "haiku"
+  },
+  "evolution": {
+    "promotion_threshold": 5,
+    "retirement_failure_count": 3,
+    "stale_days": 30
+  }
+}
